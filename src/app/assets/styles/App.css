@@ -1,0 +1,75 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f9f9f9;
+}
+
+.App-logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.App-logo {
+  height: 75px;
+}
+
+.App-nav {
+  display: flex;
+  justify-content: flex-start; /* Aligne les liens à gauche */
+  gap: 20px;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.App-nav a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+
+.App-login-btn {
+  background-color: #00b3e6; /* Couleur cohérente avec le logo */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.App-login-btn:hover {
+  background-color: #0097cc; /* Couleur légèrement plus foncée pour le survol */
+}
+
+table {
+  width: 50%;
+  margin: 20px auto;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+h1 {
+  margin: 50px 0 50px 0;
+}
