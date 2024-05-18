@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">
-  <img width="250px" src="[https://github.com/Hack-n-Leap/website_frontend/assets/79806369/a58bcb99-cd1f-46df-95aa-9e8bfa6a9713](https://github.com/Hack-n-Leap/website_frontend/assets/79806369/f6a79a43-eaa9-4cf0-aab4-396a3056937d)" alt="Hack'n'Leap LOGO" align="center">
+  <img width="250px" src="https://github.com/Hack-n-Leap/website_frontend/assets/79806369/f6a79a43-eaa9-4cf0-aab4-396a3056937d" alt="Hack'n'Leap LOGO" align="center">
   <h1 align="center">Hack'n'Leap Website</h1>
 </p>
 
