@@ -1,6 +1,4 @@
 import React from 'react';
-import "../../assets/styles/App.css";
-import Header from '../../components/header';
 
 // Fonction pour convertir le temps en heures, minutes, secondes
 const formatTime = (seconds) => {
@@ -32,7 +30,6 @@ export default async function LeaderboardPage() {
 
   return (
     <div className="App">
-      <Header />
       <main>
         <h1>Leaderboard</h1>
         <table>
@@ -57,6 +54,5 @@ export default async function LeaderboardPage() {
         </table>
       </main>
     </div>
-    
   );
 }
