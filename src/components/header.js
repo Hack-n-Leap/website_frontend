@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 
 import "../assets/styles/App.css";
-import logo from "../assets/image/logo.png"
 
 function Header() {
   return (
     <header className="App-header">
     <div className="App-logo-container">
-      <img src={logo} alt="Hack'n'Leap Logo" className="App-logo" />
+      <img src="/logo.png" alt="Hack'n'Leap Logo" className="App-logo" />
     </div>
     <nav className="App-nav">
-      <Link to="/">Accueil</Link>
-      <Link to="/leaderboard">Classement</Link>
+      <Link href="/">Accueil</Link>
+      <Link href="/leaderboard">Classement</Link>
     </nav>
     <button className="App-login-btn">Connexion</button>
   </header>

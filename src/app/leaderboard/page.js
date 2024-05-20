@@ -1,7 +1,6 @@
-import React, { useEffect, useState } from 'react';
-
-import '../assets/styles/App.css';
-import Header from '../components/header';
+import React from 'react';
+// import "../../assets/styles/App.css";
+import Header from '../../components/header';
 
 // Fonction pour convertir le temps en heures, minutes, secondes
 const formatTime = (seconds) => {
@@ -11,35 +10,23 @@ const formatTime = (seconds) => {
   return `${hrs}h ${mins}m ${secs}s`;
 };
 
-function Leaderboard() {
-  const [leaderboard, setLeaderboard] = useState([]);
-  const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch('http://localhost:3001/api/leaderboard/getAll');
-        if (!response.ok) {
-          throw new Error('Network response was not ok');
-        }
-        const data = await response.json();
-        setLeaderboard(data);
-      } catch (error) {
-        setError(error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <div>Loading...</div>;
+// Composant Server pour la récupération des données
+async function getData() {
+  const response = await fetch('http://localhost:3001/api/leaderboard/getAll', {
+    next: { revalidate: 10 } // revalidates the data every 10 seconds
+  });
+  if (!response.ok) {
+    throw new Error('Failed to fetch data');
   }
+  return response.json();
+}
 
-  if (error) {
+// Composant de la page Leaderboard
+export default async function LeaderboardPage() {
+  let leaderboard;
+  try {
+    leaderboard = await getData();
+  } catch (error) {
     return <div>Error: {error.message}</div>;
   }
 
@@ -72,5 +59,3 @@ function Leaderboard() {
     </div>
   );
 }
-
-export default Leaderboard;
