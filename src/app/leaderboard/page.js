@@ -1,5 +1,5 @@
 import React from 'react';
-// import "../../assets/styles/App.css";
+import "../../assets/styles/App.css";
 import Header from '../../components/header';
 
 // Fonction pour convertir le temps en heures, minutes, secondes
@@ -38,9 +38,9 @@ export default async function LeaderboardPage() {
         <table>
           <thead>
             <tr>
-              <th>Rank</th>
+              <th>Rang</th>
               <th>Pseudo</th>
-              <th>Time</th>
+              <th>Temps</th>
               <th>Date</th>
             </tr>
           </thead>
@@ -57,5 +57,6 @@ export default async function LeaderboardPage() {
         </table>
       </main>
     </div>
+    
   );
 }

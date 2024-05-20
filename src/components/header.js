@@ -1,7 +1,20 @@
 import React from 'react';
 import Link from 'next/link';
+import axios from "axios";
 
-import "../assets/styles/App.css";
+async function LoginButton() {
+  const isConnnected = (await axios.get("http://localhost:3001/api/auth/isConnnected")).data.connected;
+
+  if (isConnnected) {
+    const pseudo = (await axios.get("http://localhost:3001/api/users/getActive")).data.pseudo
+    return (
+      <span>{pseudo}</span>
+    )
+  }
+  return (
+    <button className="App-login-btn">Connexion</button>
+  )
+}
 
 function Header() {
   return (
@@ -13,7 +26,7 @@ function Header() {
       <Link href="/">Accueil</Link>
       <Link href="/leaderboard">Classement</Link>
     </nav>
-    <button className="App-login-btn">Connexion</button>
+    <LoginButton />
   </header>
   );
 }
