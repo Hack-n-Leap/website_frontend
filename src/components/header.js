@@ -1,12 +1,13 @@
 import React from 'react';
 import Link from 'next/link';
-import axios from "axios";
+
+import axiosInstance from './axiosInstance';
 
 async function LoginButton() {
-  const isConnnected = (await axios.get("http://localhost:3001/api/auth/isConnnected")).data.connected;
+  const isConnnected = (await axiosInstance.get("http://localhost:3001/api/auth/isConnnected")).data.connected;
 
   if (isConnnected) {
-    const pseudo = (await axios.get("http://localhost:3001/api/users/getActive")).data.pseudo
+    const pseudo = (await axiosInstance.get("http://localhost:3001/api/users/getActive")).data.pseudo
     return (
       <span>{pseudo}</span>
     )

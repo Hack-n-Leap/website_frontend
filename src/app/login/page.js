@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import axios from 'axios';
+import axiosInstance from '../../components/axiosInstance';
 
 function Login() {
     async function handleSubmit(e) {
@@ -12,7 +12,7 @@ function Login() {
         const pseudo = formData.get("pseudo");
         const password = formData.get("password");
 
-        await axios.post("http://127.0.0.1:3001/api/auth/login", {pseudo, password})
+        await axiosInstance.post("http://127.0.0.1:3001/api/auth/login", {pseudo, password})
     }
 
     return (
