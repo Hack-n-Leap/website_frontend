@@ -1,4 +1,6 @@
+'use client'
 import React from 'react';
+import styled from 'styled-components';
 
 export default function GamePage() {
     return (
@@ -31,12 +33,18 @@ export default function GamePage() {
                     <div style={{
                         flex: 1,
                         marginRight: '20px',
-                        transition: 'transform .2s'
+                        transition: 'transform .2s',
+                        overflow: 'visible',
+                        position: 'relative'
                     }}>
                         <img src="https://cdn.discordapp.com/attachments/619915799687069726/1245366982291886100/nj5kFWN.png?ex=66587de2&is=66572c62&hm=3062ced6717cd99188955564634b7d1922c91b9cf90055ec1b9aea73c2bdd580&" alt="Image du jeu" style={{
                             width: '100%',
-                            border: '4px solid #808080'
-                        }}/>
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform .2s',
+                            position: 'absolute',
+                            zIndex: 1
+                        }} onMouseOver={e => {e.currentTarget.style.zIndex = '2'; e.currentTarget.style.objectFit = 'contain'; e.currentTarget.style.transform = 'scale(1.2)';}} onMouseOut={e => {e.currentTarget.style.zIndex = '1'; e.currentTarget.style.objectFit = 'cover'; e.currentTarget.style.transform = 'scale(1.0)';}}/>
                     </div>
                     <div style={{
                         flex: 2,
@@ -67,6 +75,45 @@ export default function GamePage() {
                             cursor: 'pointer',
                             transition: 'background-color .3s'
                         }}>Télécharger le jeu</a>
+                    </div>
+                </div>
+                <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                    justifyContent: 'space-between',
+                    margin: '120px 0'
+                }}>
+                    <div style={{
+                        flex: 2,
+                        backgroundColor: '#fff',
+                        padding: '20px',
+                        boxShadow: '0px 0px 10px rgba(0,0,0,0.1)',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        justifyContent: 'space-between'
+                    }}>
+                        <div>
+                            <h2>Compétition et Classement</h2>
+                            <p>Notre jeu n'est pas seulement une aventure, c'est aussi une compétition ! Chaque niveau est une course contre la montre où chaque seconde compte. Vous pouvez voir comment vous vous situez par rapport aux autres joueurs grâce à notre système de classement basé sur le temps.</p>
+                            <p>Le classement est mis à jour en temps réel, vous pouvez donc toujours voir votre progression. Que vous soyez un joueur compétitif cherchant à dominer les classements, ou que vous aimiez simplement voir votre amélioration au fil du temps, notre système de classement ajoute une dimension supplémentaire d'excitation et de défi au jeu.</p>
+                            <p>Alors, êtes-vous prêt à faire la course et à vous hisser au sommet du classement ? Rejoignez-nous dans le jeu et montrez-nous de quoi vous êtes capable !</p>
+                        </div>
+                    </div>
+                    <div style={{
+                        flex: 1,
+                        marginLeft: '20px',
+                        transition: 'transform .2s',
+                        overflow: 'visible',
+                        position: 'relative'
+                    }}>
+                        <img src="https://cdn.discordapp.com/attachments/619915799687069726/1245391139482238976/JWSPeqr.png?ex=66589461&is=665742e1&hm=3af9d8c2d5380fd1fcc13094e5c64ff960cc8d5079990bf9b266f8c4b2631bac&" alt="Capture d'écran du classement" style={{
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover',
+                            transition: 'transform .2s',
+                            position: 'absolute',
+                            zIndex: 1
+                        }} onMouseOver={e => {e.currentTarget.style.zIndex = '2'; e.currentTarget.style.objectFit = 'contain'; e.currentTarget.style.transform = 'scale(1.2)';}} onMouseOut={e => {e.currentTarget.style.zIndex = '1'; e.currentTarget.style.objectFit = 'cover'; e.currentTarget.style.transform = 'scale(1.0)';}}/>
                     </div>
                 </div>
             </div>
