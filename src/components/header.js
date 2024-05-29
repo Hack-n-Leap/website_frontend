@@ -7,9 +7,10 @@ async function LoginButton() {
   const isConnnected = (await axiosInstance.get("http://localhost:3001/api/auth/isConnnected")).data.connected;
 
   if (isConnnected) {
-    const pseudo = (await axiosInstance.get("http://localhost:3001/api/users/getActive")).data.pseudo
+    const response = await axiosInstance.get("http://localhost:3001/api/users/getActive");
+
     return (
-      <span>{pseudo}</span>
+      <span>Bienvenue, {response.data.name}</span>
     )
   }
   return (

@@ -12,7 +12,9 @@ function Login() {
         const pseudo = formData.get("pseudo");
         const password = formData.get("password");
 
-        await axiosInstance.post("http://127.0.0.1:3001/api/auth/login", {pseudo, password})
+        await axiosInstance.post("http://127.0.0.1:3001/api/auth/login", {pseudo, password}, {withCredentials: true});
+        console.log(await axiosInstance.get("http://localhost:3001/api/auth/isConnnected", {withCredentials: true}));
+
     }
 
     return (
