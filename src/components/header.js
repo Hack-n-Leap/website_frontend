@@ -13,7 +13,7 @@ async function LoginButton() {
     )
   }
   return (
-    <button className="App-login-btn">Connexion</button>
+    <a className="App-login-btn" href="/login">Connexion</a>
   )
 }
 
