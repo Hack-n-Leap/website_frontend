@@ -1,7 +1,22 @@
 import React from 'react';
 import Link from 'next/link';
 
-import "../assets/styles/App.css";
+import axiosInstance from './axiosInstance';
+
+async function LoginButton() {
+  const isConnnected = (await axiosInstance.get("http://localhost:3001/api/auth/isConnnected")).data.connected;
+
+  if (isConnnected) {
+    const response = await axiosInstance.get("http://localhost:3001/api/users/getActive");
+
+    return (
+      <span>Bienvenue, {response.data.name}</span>
+    )
+  }
+  return (
+    <a className="App-login-btn" href="/login">Connexion</a>
+  )
+}
 
 function Header() {
   return (
@@ -13,7 +28,7 @@ function Header() {
       <Link href="/">Accueil</Link>
       <Link href="/leaderboard">Classement</Link>
     </nav>
-    <button className="App-login-btn">Connexion</button>
+    <LoginButton />
   </header>
   );
 }

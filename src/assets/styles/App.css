@@ -48,7 +48,7 @@
 }
 
 table {
-  width: 50%;
+  width: 75%;
   margin: 20px auto;
   border-collapse: collapse;
 }
@@ -72,4 +72,78 @@ tr:hover {
 
 h1 {
   margin: 50px 0 50px 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Nobile", sans-serif;
+}
+
+footer {
+  margin-top: auto;
+  background-color: #f9f9f9;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footerCategory {
+  flex: 1;
+  text-align: center;
+  padding: 25px 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.footerCategory a {
+  text-align: center;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+form {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  height: 250px;
+}
+
+.login-group {
+  margin-bottom: 15px;
+}
+
+.login-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.login-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.submit-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
