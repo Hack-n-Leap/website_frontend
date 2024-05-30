@@ -37,14 +37,14 @@ export default function GamePage() {
                         overflow: 'visible',
                         position: 'relative'
                     }}>
-                        <img src="https://cdn.discordapp.com/attachments/619915799687069726/1245366982291886100/nj5kFWN.png?ex=66587de2&is=66572c62&hm=3062ced6717cd99188955564634b7d1922c91b9cf90055ec1b9aea73c2bdd580&" alt="Image du jeu" style={{
+                        <iframe src="https://www.youtube.com/embed/hUAvbMDDE5k?si=7y4RTa22dxP3YQ81?autoplay=1" alt="Image du jeu" style={{
                             width: '100%',
                             height: '100%',
                             objectFit: 'cover',
                             transition: 'transform .2s',
                             position: 'absolute',
                             zIndex: 1
-                        }} onMouseOver={e => {e.currentTarget.style.zIndex = '2'; e.currentTarget.style.objectFit = 'contain'; e.currentTarget.style.transform = 'scale(1.2)';}} onMouseOut={e => {e.currentTarget.style.zIndex = '1'; e.currentTarget.style.objectFit = 'cover'; e.currentTarget.style.transform = 'scale(1.0)';}}/>
+                        }} onMouseOver={e => {e.currentTarget.style.zIndex = '2'; e.currentTarget.style.objectFit = 'contain'; e.currentTarget.style.transform = 'scale(1.2)';}} onMouseOut={e => {e.currentTarget.style.zIndex = '1'; e.currentTarget.style.objectFit = 'cover'; e.currentTarget.style.transform = 'scale(1.0)';}} />
                     </div>
                     <div style={{
                         flex: 2,
